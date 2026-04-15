@@ -141,48 +141,8 @@ Manejo de errores (try/except)
 Condicionales y bucles
 Entrada y salida de datos
 Persistencia de información
-
-DIAGRAMA DE FLUJO
-
-INICIO
-  ↓
-Ingresar nombre
-  ↓
-Mostrar menú
-  ↓
-Seleccionar opción
-  ↓
-¿Opción válida?
- ├── NO → Error → Menú
- └── SÍ
-        ↓
-   ┌───────────────┬───────────────┬───────────────┐
-   ↓               ↓               ↓
-REVISAR         REPARAR         DONAR
-   ↓               ↓               ↓
-Ingresar datos  Seleccionar     Ingresar datos
-   ↓            reparación        ↓
-Mostrar informe  ↓             Guardar
-   ↓         Elegir traslado      ↓
-¿Desea reparar? ↓             Informe
- ├── NO        Calcular costo      ↓
- │             ↓                ¿Más?
- │             Informe          ├─ Sí → Menú
- │             ↓                └─ No → FIN
- │         Aviso de variación
- │             ↓
- │         Confirmar
- │             ↓
- │      ¿Lleva equipo?
- │        ├ Sí → Ticket → Fecha → Guardar → ¿Más?
- │        └ No → Fecha recogida → Guardar → ¿Más?
- ↓
-¿Más?
- ├─ Sí → Menú
- └─ No → FIN
-
  
-Desarrollos futuros:
+#Desarrollos futuros:
 Para llevar este proyecto a la realidad necesitariamos incluir estos tres desarrollos:
 
 1. WhatsApp (Twilio)
