@@ -18,7 +18,7 @@ Persistencia de datos en archivo JSON
 Control de flujo con opción de continuar o salir
 
 #Seudocodigo
-Explica la logica que se ejecutare desde el main.py
+Explica la logica que se ejecuta desde el main.py
 
 INICIO
 
