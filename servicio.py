@@ -73,13 +73,13 @@ class ServicioTecnico:
             "año": año,
             "problema": problema,
             "horas": horas,
-            "costo": costo
+            "costo_total": costo
         }
 
         self.guardar(datos)
         self.informe(datos)
 
-    # Reparar
+    # Reparar con traslado
     def reparar(self):
         print(f"\n[Servicio Técnico]: {self.cliente}, seleccione el tipo de reparación")
         print("1. Pantalla")
@@ -103,7 +103,30 @@ class ServicioTecnico:
         else:
             problema, horas = "No enciende", 3
 
-        costo = horas * COSTO_POR_HORA
+        # Opciones de traslado
+        print(f"\n[Servicio Técnico]: {self.cliente}, seleccione el método de entrega")
+        print("1. Llevar equipo (Gratis)")
+        print("2. Recogida a domicilio ($10)")
+        print("3. Servicio urgente ($20)")
+
+        while True:
+            traslado = input(f"{self.cliente}, seleccione una opción: ")
+            if traslado in ["1", "2", "3"]:
+                break
+            else:
+                print("[Servicio Técnico]: Opción inválida")
+
+        if traslado == "1":
+            tipo_traslado = "Cliente lleva el equipo"
+            costo_traslado = 0
+        elif traslado == "2":
+            tipo_traslado = "Recogida a domicilio"
+            costo_traslado = 10
+        else:
+            tipo_traslado = "Servicio urgente"
+            costo_traslado = 20
+
+        costo_total = (horas * COSTO_POR_HORA) + costo_traslado
 
         datos = {
             "id": int(time.time()),
@@ -111,7 +134,9 @@ class ServicioTecnico:
             "servicio": "Reparación",
             "problema": problema,
             "horas": horas,
-            "costo": costo
+            "traslado": tipo_traslado,
+            "costo_traslado": costo_traslado,
+            "costo_total": costo_total
         }
 
         self.guardar(datos)
