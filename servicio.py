@@ -80,7 +80,7 @@ class ServicioTecnico:
         self.guardar(datos)
         self.informe(datos)
 
-    # Reparar con traslado
+    # Reparar con traslado + confirmación + fecha
     def reparar(self):
         print(f"\n[Servicio Técnico]: {self.cliente}, seleccione el tipo de reparación")
         print("1. Pantalla")
@@ -104,6 +104,14 @@ class ServicioTecnico:
         else:
             problema, horas = "No enciende", 3
 
+        # Aviso de variación de costo
+        print(f"\n[Servicio Técnico]: {self.cliente}, el monto de la reparación puede variar según el diagnóstico final.")
+        confirmar = input(f"{self.cliente}, ¿desea continuar? (s/n): ")
+
+        if confirmar.lower() != "s":
+            print(f"[Servicio Técnico]: Operación cancelada, {self.cliente}")
+            return
+
         # Opciones de traslado
         print(f"\n[Servicio Técnico]: {self.cliente}, seleccione el método de entrega")
         print("1. Llevar equipo (Gratis)")
@@ -120,12 +128,15 @@ class ServicioTecnico:
         if traslado == "1":
             tipo_traslado = "Cliente lleva el equipo"
             costo_traslado = 0
+            fecha = input(f"{self.cliente}, ¿cuándo traerá el equipo?: ")
         elif traslado == "2":
             tipo_traslado = "Recogida a domicilio"
             costo_traslado = 10
+            fecha = input(f"{self.cliente}, indique la fecha de recogida: ")
         else:
             tipo_traslado = "Servicio urgente"
             costo_traslado = 20
+            fecha = input(f"{self.cliente}, indique la fecha de recogida urgente: ")
 
         costo_total = (horas * COSTO_POR_HORA) + costo_traslado
 
@@ -136,8 +147,10 @@ class ServicioTecnico:
             "problema": problema,
             "horas": horas,
             "traslado": tipo_traslado,
+            "fecha_acordada": fecha,
             "costo_traslado": costo_traslado,
-            "costo_total": costo_total
+            "costo_estimado": costo_total,
+            "nota": "El costo puede variar según diagnóstico final"
         }
 
         self.guardar(datos)
