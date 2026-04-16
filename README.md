@@ -1,11 +1,11 @@
 # DouglasProyecto-Final-1400
-Este proyecto es una aplicacion en Python que simula un bot tipo WhatsAPP en la terminal para un servicio tecnico de dispositivos. Permite revisar, reparar o donar equipos.  Este sistema de atención para un servicio técnico de dispositivos electrónicos permite al cliente interactuar mediante un menú en la terminal para revisar, reparar o donar equipos. 
+Este proyecto es una aplicacion en Python que simula un customer service virtual (bot) tipo WhatsAPP en la terminal para un Centro de Recepcion ST de dispositivos Electronicos. Permite revisar, reparar, actualizar o donar dichos equipos. Para su implentacion en la vida sostenible para el alarge del uso de estos equipos real tendria que contar con algunas otras herramientas que se conecta a este sistema que presentamos hoy. Este sistema de atención es para un servicio recepcion técnico de dispositivos electrónicos que permite al cliente interactuar mediante un menú en la terminal para revisar, actualiza,reparar o donar equipos. 
 
 #Funcionalidades
 Registro del nombre del cliente
 Menú interactivo con opciones:
 Revisar dispositivo
-Reparar dispositivo
+Actualizar/Reparar dispositivo
 Donar dispositivo
 Validación de datos con try/except
 Generación de informes automáticos
@@ -28,13 +28,13 @@ Solicitar nombre del cliente
 MIENTRAS el cliente desee continuar:
 
     Mostrar menú de opciones:
-        1. Revisar
+        1. Actualizae/Revisar
         2. Reparar
         3. Donar
 
     Leer opción del cliente
 
-    SI opción es Revisar:
+    SI opción es Actualizar/Revisar:
         Solicitar datos del dispositivo
         Validar entradas
         Generar informe de revisión
@@ -94,11 +94,11 @@ MIENTRAS el cliente desee continuar:
 FIN
 
 Ejemplo de uso
-[Servicio Técnico]: Ingrese su nombre: Ana
+[CentrodeRecepcionST]: Ingrese su nombre: Ana
 
-=== Servicio Técnico Pro ===
-[Servicio Técnico]: Bienvenido Ana
-1️⃣ Revisar
+=== CentrodeRecepcionST ===
+[CentrodeRecepcionST]: Bienvenido Ana
+1️⃣ Actulizar/Revisar
 2️⃣ Reparar
 3️⃣ Donar
 Tecnologías utilizadas
@@ -126,9 +126,9 @@ Ejemplo de uso
 [Servicio Técnico]: Ingrese su nombre: Ana
 
 === Servicio Técnico Pro ===
-[Servicio Técnico]: Bienvenido Ana
-[Servicio Técnico]: Ana, seleccione una opción
-1️⃣ Revisar
+[CentrodeRecepcionST]: Bienvenido Ana
+[CentrodeRecepcionST: Ana, seleccione una opción
+1️⃣ Actualizar/Revisar
 2️⃣ Reparar
 3️⃣ Donar
 Tecnologías utilizadas
@@ -152,8 +152,5 @@ Procesa lógica (TU código)
 3. Webhook (Flask/FastAPI)
 Conecta ambo
 Servicio Técnico Pro
-
-
-
 
  
