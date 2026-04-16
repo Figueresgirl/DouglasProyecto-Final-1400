@@ -1,7 +1,7 @@
-from servicio import ServicioTecnico
+from servicio import CentrodeRecepcionST
 
 def main():
-    app = ServicioTecnico()
+    app = CentrodeRecepcionST()
     app.iniciar()
 
 if __name__ == "__main__":
